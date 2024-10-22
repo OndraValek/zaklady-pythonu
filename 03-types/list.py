@@ -293,6 +293,8 @@ hundreds[:3] = hundreds[-3:] = []
 print(hundreds)
 unique = [let for let in ascii if not ascii.count(let) > 1]
 print(unique)
+hund_ascii = list(zip(hundreds,ascii))
+print(hund_ascii)
 
 print(f'\n*************************************\nCvičení 2\n*************************************')
 
