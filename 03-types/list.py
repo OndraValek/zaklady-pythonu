@@ -9,6 +9,8 @@ https://www.youtube.com/watch?v=_uQrJ0TkZlc&list=PLDDhGQzLtPdbS987RIIT8WKwb-L_K2
 https://www.w3schools.com/python/python_lists.asp
 https://macek.sandbox.cz/texty/python-tutorial-cz/tut/node5.html
 '''
+import random
+import string
 
 '''
 Příklady různých seznamů v Pythonu:
@@ -56,11 +58,10 @@ print(f'\tVypíše každý druhý prvek ze seznamu letters: {letters[::2]}')
 # ??? 1. cvičení ???
 # Doplňte podle zadání chybějící u následujících tří výpisů
 print('\n1. Cvičení\n***********************************************************************************************')
-print(f'\tVypíše poslední 2 prvky ze seznamu numbers: ???')
-print(f'\tVypíše každý sudý prvek ze seznamu letters: ???')
-print(f'\tVypíše všechny hodnoty z mixed_list kromě dvou posledních: ???')
-print(f'\tVypíše hodnotu prvku name ze slovníku umístěného v seznamu mixed_list: ???')
-print(f'\tVypíše hodnotu předposledního čísla z listu numbers umístěného v seznamu mixed_list: ???')
+print(f'\tVypíše poslední 2 prvky ze seznamu numbers: {numbers[-2:]}')
+print(f'\tVypíše každý sudý prvek ze seznamu letters: {letters[1::2]}')
+print(f'\tVypíše všechny hodnoty z mixed_list kromě dvou posledních: {mixed_list[:-2]}')
+print(f'\tVypíše hodnotu prvku name ze slovníku umístěného v seznamu mixed_list: {mixed_list[-1]["name"]}')
 print('***********************************************************************************************\n')
 # ??? Konec 1. cvičení ???
 
@@ -284,7 +285,17 @@ print(f'\tSbalení seznamů do proměnné values: {values}\n')
 # import knihovny pro generování náhodných čísel
 from random import randint
 
+hundreds = [i for i in range(1, 2001) if i % 200 == 0]
+print(hundreds)
+ascii = [random.choice(string.ascii_uppercase) for let in range(50)]
+print(ascii)
+hundreds[:3] = hundreds[-3:] = []
+print(hundreds)
+unique = [let for let in ascii if not ascii.count(let) > 1]
+print(unique)
+
 print(f'\n*************************************\nCvičení 2\n*************************************')
+
 
 
 
